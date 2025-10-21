@@ -1,72 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mvc:View 
-    controllerName="sap.training.exc.controller.App"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
-    xmlns:m="sap.m"
-    xmlns:tnt="sap.tnt"
-    xmlns:f="sap.ui.layout.form"
-    xmlns:sf="sap.ui.comp.smartfield"
-    xmlns:form="sap.ui.comp.smartform">
+<mvc:View controllerName="sap.training.exc.controller.App"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns:m="sap.m"
+          xmlns:tnt="sap.tnt">
 
-    <tnt:ToolPage id="appToolPage">
-        <tnt:header>
-            <tnt:ToolHeader>
-                <m:Title text="Minha App" />
-            </tnt:ToolHeader>
-        </tnt:header>
+  <tnt:ToolPage id="toolPage">
 
-        <tnt:sideContent>
-            <tnt:SideNavigation id="appSideNav" expanded="true">
-                <tnt:NavigationList>
-                    <tnt:NavigationListItem text="Home" icon="sap-icon://home" key="home"/>
-                    <tnt:NavigationListItem text="Clientes" icon="sap-icon://customer" key="customers"/>
-                    <tnt:NavigationListItem text="Config." icon="sap-icon://action-settings" key="settings"/>
-                </tnt:NavigationList>
-            </tnt:SideNavigation>
-        </tnt:sideContent>
+    <tnt:header>
+      <tnt:ToolHeader>
+        <m:Title text="Minha App" />
+      </tnt:ToolHeader>
+    </tnt:header>
 
-        <tnt:mainContents>
-            <m:Page id="pageMain" title="Conteúdo">
-                <m:content>
-                    <m:ScrollContainer id="mainScroll" height="100%" horizontal="false" vertical="true">
-                        <form:SmartForm id="mainForm" 
-                            class="editableForm" 
-                            editTogglable="true" 
-                            editable="true"
-                            title="Formulário Smart">
-                            <form:layout>
-                                <form:ColumnLayout columnsM="2" columnsL="3" columnsXL="4"/>
-                            </form:layout>
-                            <form:Group id="groupMain" title="Campos Smart">
-                                <form:GroupElement id="geDelivery">
-                                    <sf:SmartField id="sfDelivery" textInEditModeSource="ValueListNoValidation">
-                                        <sf:configuration>
-                                            <sf:Configuration displayBehaviour="idAndDescription" />
-                                        </sf:configuration>
-                                    </sf:SmartField>
-                                </form:GroupElement>
+    <tnt:sideContent>
+      <tnt:SideNavigation id="sideNav" expanded="true">
+        <tnt:NavigationList>
+          <tnt:NavigationListItem text="Home" icon="sap-icon://home" key="home"/>
+          <tnt:NavigationListItem text="Clientes" icon="sap-icon://customer" key="customers"/>
+          <tnt:NavigationListItem text="Config." icon="sap-icon://action-settings" key="settings"/>
+        </tnt:NavigationList>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
 
-                                <form:GroupElement id="geCategory">
-                                    <sf:SmartField id="sfCategory"/>
-                                </form:GroupElement>
-
-                                <form:GroupElement id="geDate">
-                                    <sf:SmartField id="sfDate"/>
-                                </form:GroupElement>
-
-                                <form:GroupElement id="geDateLong">
-                                    <sf:SmartField id="sfDateLong" textLabel="Data Formato Longo">
-                                        <sf:customData>
-                                            <core:CustomData key="dateFormatSettings" value='\{"style":"long"\}'/>
-                                        </sf:customData>
-                                    </sf:SmartField>
-                                </form:GroupElement>
-                            </form:Group>
-                        </form:SmartForm>
-                    </m:ScrollContainer>
-                </m:content>
-            </m:Page>
-        </tnt:mainContents>
-    </tnt:ToolPage>
+    <tnt:mainContents>
+      <m:Page id="pageMain" title="Conteúdo">
+        <m:content>
+          <m:Text text="Conteúdo principal aqui" />
+          <m:Input value="Digite aqui ...." change=".onInputChange"/>
+          <m:Button text="Clique" press=".onButtonPress"/>
+        </m:content>
+      </m:Page>
+    </tnt:mainContents>
+  </tnt:ToolPage>
 </mvc:View>
+
