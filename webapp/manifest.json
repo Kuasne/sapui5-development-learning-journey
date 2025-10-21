@@ -103,8 +103,6 @@
             ],
             "targets": {
                 "home": {
-                    "viewName": "sap.training.exc.view.App",
-                    "viewLevel": 1,
                     "controlId": "App",
                     "controlAggregation": "pages"
                 }
