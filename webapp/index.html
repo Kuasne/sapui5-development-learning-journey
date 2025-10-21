@@ -19,6 +19,45 @@
 </head>
 
 <body class="sapUiBody" id="content">
+    <div id="app"></div>
+
+    <script>
+        navbar = new sap.tnt.ToolPage({
+            header: new sap.tnt.ToolPageHeader({
+                toolAreaToggle: true,
+                headerContent: [
+                    new sap.m.Label({ text: "SAPUI5 Development Learning Journey" })
+                ]
+            }),
+            sideContent: new sap.tnt.ToolPageSideContent({
+                expanded: true,
+                sideContentItems: [
+                    new sap.tnt.NavigationList({
+                        items: [
+                            new sap.tnt.NavigationListItem({
+                                text: "Home",
+                                icon: "sap-icon://home"
+                            }),
+                            new sap.tnt.NavigationListItem({
+                                text: "About",
+                                icon: "sap-icon://information"
+                            })
+                        ]
+                    })
+                ]
+            }),
+            mainContents: [
+                new sap.m.Page({
+                    title: "Welcome to SAPUI5",
+                    content: [
+                        new sap.m.Text({ text: "This is a simple SAPUI5 application layout using ToolPage." })
+                    ]
+                })
+            ]
+        });
+
+
+    </script>
 </body>
 
 </html>

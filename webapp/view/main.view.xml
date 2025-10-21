@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="myapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    displayBlock="true">
+
+    <App>
+        <Page title="Exemplo Side Navigation">
+            <tnt:ToolPage>
+                <tnt:header>
+                    <tnt:ToolHeader>
+                        <Button icon="sap-icon://menu2" press=".onToggleSideNav"/>
+                        <Title text="Minha Aplicação"/>
+                    </tnt:ToolHeader>
+                </tnt:header>
+
+                <tnt:sideContent>
+                    <tnt:SideNavigation id="sideNavigation" itemSelect=".onItemSelect">
+                        <tnt:NavigationList>
+                            <tnt:NavigationListItem text="Início" icon="sap-icon://home" key="home" />
+                            <tnt:NavigationListItem text="Configurações" icon="sap-icon://action-settings" key="settings" />
+                        </tnt:NavigationList>
+                    </tnt:SideNavigation>
+                </tnt:sideContent>
+
+                <tnt:mainContents>
+                    <VBox id="pageContainer">
+                        <Text text="Selecione um item no menu lateral"/>
+                    </VBox>
+                </tnt:mainContents>
+            </tnt:ToolPage>
+        </Page>
+    </App>
+</mvc:View>
