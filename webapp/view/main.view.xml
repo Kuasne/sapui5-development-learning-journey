@@ -1,35 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 <mvc:View
-    controllerName="myapp.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.training.exc.controller.Main"
     xmlns="sap.m"
-    xmlns:tnt="sap.tnt"
-    displayBlock="true">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt">
+    <tnt:ToolPage id="mainToolPage">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Title text="My App" />
+            </tnt:ToolHeader>
+        </tnt:header>
+        
+        <tnt:sideContent>
+            <tnt:SideNavigation id="mainPageSideNav" expanded="true">
+                <tnt:NavigationList>
+                    <tnt:NavigationListItem text="Home" icon="sap-icon://home" key="home"/>
+                    <tnt:NavigationListItem text="Overview" icon="sap-icon://business-objects-experience" key="overview"/>
+                    <tnt:NavigationListItem text="Detail" icon="sap-icon://detail-view" key="detail"/>
+                </tnt:NavigationList>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
 
-    <App>
-        <Page title="Exemplo Side Navigation">
-            <tnt:ToolPage>
-                <tnt:header>
-                    <tnt:ToolHeader>
-                        <Button icon="sap-icon://menu2" press=".onToggleSideNav"/>
-                        <Title text="Minha Aplicação"/>
-                    </tnt:ToolHeader>
-                </tnt:header>
-
-                <tnt:sideContent>
-                    <tnt:SideNavigation id="sideNavigation" itemSelect=".onItemSelect">
-                        <tnt:NavigationList>
-                            <tnt:NavigationListItem text="Início" icon="sap-icon://home" key="home" />
-                            <tnt:NavigationListItem text="Configurações" icon="sap-icon://action-settings" key="settings" />
-                        </tnt:NavigationList>
-                    </tnt:SideNavigation>
-                </tnt:sideContent>
-
-                <tnt:mainContents>
-                    <VBox id="pageContainer">
-                        <Text text="Selecione um item no menu lateral"/>
-                    </VBox>
-                </tnt:mainContents>
-            </tnt:ToolPage>
-        </Page>
-    </App>
+        <tnt:mainContents>
+            <Page id="mainPage" title="Main View">
+                <content>
+                    <Title text="Welcome to My App" titleStyle="H1"/>
+                    <Text text="Select an option from the navigation menu"/>
+                </content>
+            </Page>
+        </tnt:mainContents>
+    </tnt:ToolPage>
 </mvc:View>

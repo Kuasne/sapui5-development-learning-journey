@@ -1,7 +1,7 @@
 {
     "_version": "1.28.0",
     "sap.app": {
-        "id": "<...>",
+        "id": "sap.training.exc",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -51,6 +51,7 @@
                 "sap.m": {},
                 "sap.ui.core": {},
                 "sap.f": {},
+                "sap.tnt": {},
                 "sap.suite.ui.generic.template": {},
                 "sap.ui.comp": {},
                 "sap.ui.generic.app": {},
@@ -66,11 +67,11 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "<...>"
+                    "bundleName": "sap.training.exc.i18n.i18n"
                 }
             },
             "ODataModel": {
-                "dataSource": "<...>",
+                "dataSource": "mainService",
                 "settings": {
                     "synchronizationMode": "None",
                     "operationMode": "Server",
@@ -89,30 +90,42 @@
         "routing": {
             "config": {
                 "routerClass": "sap.m.routing.Router",
+                "type": "View",
                 "viewType": "XML",
                 "async": true,
-                "controlAggregation": "pages",
-                "controlId": "App"
+                "path": "sap.training.exc.view",
+                "transition": "slide",
+                "bypassed": {
+                    "target": "notFound"
+                }
             },
             "routes": [
                 {
-                    "name": "home",
                     "pattern": "",
-                    "target": "home"
+                    "name": "main",
+                    "target": "main"
                 }
             ],
             "targets": {
-                "home": {
-                    "controlId": "App",
-                    "controlAggregation": "pages"
+                "main": {
+                    "type": "View",
+                    "id": "main",
+                    "name": "Main",
+                    "level": 0
+                },
+                "notFound": {
+                    "type": "View",
+                    "id": "notFound",
+                    "name": "NotFound",
+                    "transition": "show"
                 }
             }
         },
         "rootView": {
-            "viewName": "<...>",
+            "viewName": "sap.training.exc.view.App",
             "type": "XML",
             "async": true,
-            "id": "App"
+            "id": "app"
         }
     }
 }

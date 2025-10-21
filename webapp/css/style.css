@@ -1,1 +1,8 @@
-/* Enter your custom styles here */
+html, body, #app, #toolPage, .sapTntToolPage {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+

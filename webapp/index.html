@@ -10,20 +10,16 @@
 
 
     <!-- Importa o SDK SAPUI5 -->
-    <script id="sap-ui-bootstrap" src="https://sdk.openui5.org/resources/sap-ui-core.js" 
-    data-sap-ui-theme="sap_horizon"
-    data-sap-ui-libs="sap.m, sap.tnt"
-    data-sap-ui-compatVersion="edge" 
-    data-sap-ui-async="true"
-    data-sap-ui-onInit="module:sap/training/exc/index"
-    data-sap-ui-resourceroots='{"sap.training.exc": "./"}'
-    ></script>
+    <script id="sap-ui-bootstrap"
+  src="https://sapui5.hana.ondemand.com/1.96.36/resources/sap-ui-core.js"
+  data-sap-ui-libs="sap.m,sap.tnt"
+  data-sap-ui-theme="sap_fiori_3"
+  data-sap-ui-resourceroots='{"sap.training.exc": "./"}'>
+</script>
 </head>
 
-<body class="sapUiBody" id="content">
-    <div id="app">
-        <h1></h1>
-    </div>
+<body class="sapUiBody">
+  <div id="app"></div>
 </body>
 <script src="./controller/index.js"></script>
 
