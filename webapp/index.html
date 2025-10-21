@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAPUI5</title>
 
     <!-- Importa o SDK SAPUI5 -->
@@ -13,28 +15,6 @@
         data-sap-ui-libs="sap.m, sap.tnt"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-preload="async">
-    </script>
-
-    <script>
-        sap.ui.getCore().attachInit(function () {
-            // Cria um simples texto "Hello World"
-            var oText = new sap.m.Text({ text: "Hello SAPUI5!" });
-
-            // Cria um layout VBox com um botão e a navegação lateral
-            var oButton = new sap.m.Button({
-                text: "Clique aqui",
-                press: function () {
-                    alert("Botão clicado!");
-                }
-            });
-
-            var oVBox = new sap.m.VBox({
-                items: [oText, oButton]
-            });
-
-            // Renderiza o conteúdo na div com id="content"
-            oVBox.placeAt("content");
-        });
     </script>
 </head>
 
