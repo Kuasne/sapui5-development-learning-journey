@@ -6,58 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAPUI5</title>
+    <link rel="stylesheet" href="style.css">
+
 
     <!-- Importa o SDK SAPUI5 -->
-    <script
-        id="sap-ui-bootstrap"
-        src="https://sdk.openui5.org/resources/sap-ui-core.js"
-        data-sap-ui-theme="sap_horizon"
-        data-sap-ui-libs="sap.m, sap.tnt"
-        data-sap-ui-compatVersion="edge"
-        data-sap-ui-preload="async">
-    </script>
+    <script id="sap-ui-bootstrap" src="https://sdk.openui5.org/resources/sap-ui-core.js" 
+    data-sap-ui-theme="sap_horizon"
+    data-sap-ui-libs="sap.m, sap.tnt"
+    data-sap-ui-compatVersion="edge" 
+    data-sap-ui-async="true"
+    data-sap-ui-onInit="module:sap/training/exc/index"
+    data-sap-ui-resourceroots='{"sap.training.exc": "./"}'
+    ></script>
 </head>
 
 <body class="sapUiBody" id="content">
-    <div id="app"></div>
-
-    <script>
-        navbar = new sap.tnt.ToolPage({
-            header: new sap.tnt.ToolPageHeader({
-                toolAreaToggle: true,
-                headerContent: [
-                    new sap.m.Label({ text: "SAPUI5 Development Learning Journey" })
-                ]
-            }),
-            sideContent: new sap.tnt.ToolPageSideContent({
-                expanded: true,
-                sideContentItems: [
-                    new sap.tnt.NavigationList({
-                        items: [
-                            new sap.tnt.NavigationListItem({
-                                text: "Home",
-                                icon: "sap-icon://home"
-                            }),
-                            new sap.tnt.NavigationListItem({
-                                text: "About",
-                                icon: "sap-icon://information"
-                            })
-                        ]
-                    })
-                ]
-            }),
-            mainContents: [
-                new sap.m.Page({
-                    title: "Welcome to SAPUI5",
-                    content: [
-                        new sap.m.Text({ text: "This is a simple SAPUI5 application layout using ToolPage." })
-                    ]
-                })
-            ]
-        });
-
-
-    </script>
+    <div id="app">
+        <h1></h1>
+    </div>
 </body>
+<script src="./controller/index.js"></script>
 
 </html>
