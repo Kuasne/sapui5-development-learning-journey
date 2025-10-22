@@ -37,29 +37,6 @@
         <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5" />
     </edmx:Reference>
     <edmx:DataServices>
-    <Annotations Target="com.sap.gateway.srvd.ux_ui_customer.v0001.Product/DeliveryTransport">
-            <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="DeliveryTransportName">
-                <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
-            </Annotation>
-            <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
-                <Record>
-                    <PropertyValue Property="Label" String="Tipos de Transporte"/>
-                    <PropertyValue Property="CollectionPath" String="VL_SH_H_TRANSPORT"/>
-                    <PropertyValue Property="SearchSupported" Bool="true"/>
-                    <PropertyValue Property="Parameters">
-                        <Collection>
-                            <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
-                                <PropertyValue Property="LocalDataProperty" PropertyPath="DeliveryTransport"/>
-                                <PropertyValue Property="ValueListProperty" String="KEY"/>
-                            </Record>
-                            <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
-                                <PropertyValue Property="ValueListProperty" String="TXT"/>
-                            </Record>
-                        </Collection>
-                    </PropertyValue>
-                </Record>
-            </Annotation>
-        </Annotations>
         <Schema Namespace="com.sap.gateway.srvd.ux_ui_customer.v0001" Alias="SAP__self">
             <Annotation Term="SAP__core.SchemaVersion" String="1.0.0" />
             <EntityType Name="UX_CustomerType">
@@ -138,6 +115,31 @@
                 <EntitySet Name="Products" EntityType="com.sap.gateway.srvd.ux_ui_customer.v0001.Product"/>
                 <EntitySet Name="VL_SH_H_TRANSPORT" EntityType="com.sap.gateway.srvd.ux_ui_customer.v0001.VL_SH_H_TRANSPORT_Type"/>
             </EntityContainer>
+
+            <Annotations Target="com.sap.gateway.srvd.ux_ui_customer.v0001.Product/DeliveryTransport">
+                <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="DeliveryTransportName">
+                    <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
+                </Annotation>
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Tipos de Transporte"/>
+                        <PropertyValue Property="CollectionPath" String="VL_SH_H_TRANSPORT"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DeliveryTransport"/>
+                                    <PropertyValue Property="ValueListProperty" String="KEY"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="TXT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            
             <Annotations Target="SAP__self.UX_CustomerType/CustomerGuid">
                 <Annotation Term="SAP__core.Computed" />
                 <Annotation Term="SAP__common.Label" String="FBP GUID" />
@@ -294,6 +296,7 @@
                 </Annotation>
                 <Annotation Term="SAP__common.Messages" Path="SAP__Messages" />
             </Annotations>
+            
             <Annotations Target="SAP__self.UX_BookingType/BookingGuid">
                 <Annotation Term="SAP__core.Computed" />
                 <Annotation Term="SAP__common.Label" String="BK GUID" />
@@ -485,38 +488,133 @@
                 <Annotation Term="SAP__common.Heading" String="Date" />
                 <Annotation Term="SAP__common.QuickInfo" String="Flight date" />
             </Annotations>
-            <EntityType Name="Product" m:HasStream="true" sap:content-version="1">
-            <Key>
-                <PropertyRef Name="ProductId"/>
-            </Key>
-            <Property Name="ProductId" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Product ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="Category" Type="Edm.String" MaxLength="3" sap:label="Category" sap:creatable="false" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="CategoryName" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Category Description" sap:creatable="false" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="Description" Type="Edm.String" MaxLength="256" sap:label="Description" sap:creatable="false" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="WeightMeasure" Type="Edm.String" Nullable="false" sap:unit="WeightUnit" MaxLength="3" sap:label="Weight" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="WeightUnit" Type="Edm.String" Nullable="false" sap:semantics="unit-of-measure" MaxLength="3" sap:label="Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="Price" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="2" sap:unit="CurrencyCode" sap:label="Price" sap:creatable="false" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Currency" sap:creatable="false" sap:semantics="currency-code" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="Quantity" Type="Edm.String" Nullable="true" MaxLength="3" sap:unit="UoM" sap:label="Quantity" sap:creatable="false" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="UoM" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Unit" sap:creatable="false" sap:semantics="unit-of-measure" sap:updatable="true" sap:sortable="false"/>
-            <Property Name="Width" Type="Edm.String" Nullable="false" MaxLength="3" sap:unit="DimUnit" sap:label="Width" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="Depth" Type="Edm.String" Nullable="false" MaxLength="3" sap:unit="DimUnit" sap:label="Depth" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="Height" Type="Edm.String" Nullable="false" MaxLength="3" sap:unit="DimUnit" sap:label="Height" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="DimUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Dimension" sap:creatable="false" sap:semantics="unit-of-measure" sap:updatable="false" sap:sortable="false"/>
-            <Property Name="CreationDate" Type="Edm.DateTime" Nullable="false" sap:label="Creation Date" sap:creatable="false" sap:quickinfo="Date when this entity was created" sap:updatable="true" sap:sortable="true" sap:display-format="Date"/>
-            <Property Name="LastChanged" Type="Edm.DateTime" Nullable="false" sap:label="Changed at" sap:creatable="false" sap:quickinfo="The date and time when the entity was changed" sap:updatable="true" sap:sortable="true"/>
-            <Property Name="AvailableSince" Type="Edm.DateTimeOffset" Precision="0" sap:label="Available since" sap:filterable="false"/>
-            <Property Name="DeliveryTransport" Type="Edm.String" sap:creatable="false" sap:updatable="true" sap:label="Transport Delivery" Nullable="false"/>
-            <Property Name="DeliveryTransportName" Type="Edm.String" sap:creatable="false" sap:updatable="true" sap:label="Transport Delivery Name"/>
-        </EntityType>
-        <EntityType Name="VL_SH_H_TRANSPORT_Type" sap:content-version="1">
-            <Key>
-                <PropertyRef Name="KEY"/>
-            </Key>
-            <Property Name="KEY" Type="Edm.String" sap:text="TXT" Nullable="false" MaxLength="20" sap:label="Key"/>
-            <Property Name="TXT" Type="Edm.String" sap:label="Delivery Transport"/>
-        </EntityType>
+            
+            <EntityType Name="Product" HasStream="true">
+                <Key>
+                    <PropertyRef Name="ProductId"/>
+                </Key>
+                <Property Name="ProductId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Category" Type="Edm.String" MaxLength="3"/>
+                <Property Name="CategoryName" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="256"/>
+                <Property Name="WeightMeasure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="WeightUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Price" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="2"/>
+                <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Quantity" Type="Edm.String" Nullable="true" MaxLength="3"/>
+                <Property Name="UoM" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Width" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Depth" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Height" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="DimUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Nullable="false"/>
+                <Property Name="LastChanged" Type="Edm.DateTime" Nullable="false"/>
+                <Property Name="AvailableSince" Type="Edm.DateTimeOffset" Precision="0"/>
+                <Property Name="DeliveryTransport" Type="Edm.String" Nullable="false"/>
+                <Property Name="DeliveryTransportName" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="VL_SH_H_TRANSPORT_Type">
+                <Key>
+                    <PropertyRef Name="KEY"/>
+                </Key>
+                <Property Name="KEY" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="TXT" Type="Edm.String"/>
+            </EntityType>
+            
+            <Annotations Target="SAP__self.Product/ProductId">
+                <Annotation Term="SAP__common.Label" String="Product ID" />
+                <Annotation Term="SAP__core.Computed" /> <Annotation Term="SAP__core.Immutable" /> </Annotations>
+            <Annotations Target="SAP__self.Product/Category">
+                <Annotation Term="SAP__common.Label" String="Category" />
+                <Annotation Term="SAP__core.Computed" /> </Annotations>
+            <Annotations Target="SAP__self.Product/CategoryName">
+                <Annotation Term="SAP__common.Label" String="Category Description" />
+                <Annotation Term="SAP__core.Computed" /> </Annotations>
+            <Annotations Target="SAP__self.Product/SupplierName">
+                <Annotation Term="SAP__common.Label" String="Supplier" />
+                <Annotation Term="SAP__core.Computed" /> <Annotation Term="SAP__core.Immutable" /> </Annotations>
+            <Annotations Target="SAP__self.Product/Description">
+                <Annotation Term="SAP__common.Label" String="Description" />
+                <Annotation Term="SAP__core.Computed" /> </Annotations>
+            <Annotations Target="SAP__self.Product/WeightMeasure">
+                <Annotation Term="SAP__common.Label" String="Weight" />
+                <Annotation Term="SAP__measures.Unit" Path="WeightUnit" /> <Annotation Term="SAP__core.Computed" />
+                <Annotation Term="SAP__core.Immutable" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/WeightUnit">
+                <Annotation Term="SAP__common.Label" String="Unit" />
+                <Annotation Term="SAP__core.Computed" />
+                <Annotation Term="SAP__core.Immutable" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/Price">
+                <Annotation Term="SAP__common.Label" String="Price" />
+                <Annotation Term="SAP__measures.ISOCurrency" Path="CurrencyCode" /> <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/CurrencyCode">
+                <Annotation Term="SAP__common.Label" String="Currency" />
+                <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/Quantity">
+                <Annotation Term="SAP__common.Label" String="Quantity" />
+                <Annotation Term="SAP__measures.Unit" Path="UoM" /> <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/UoM">
+                <Annotation Term="SAP__common.Label" String="Unit" />
+                <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/Width">
+                <Annotation Term="SAP__common.Label" String="Width" />
+                <Annotation Term="SAP__measures.Unit" Path="DimUnit" />
+                <Annotation Term="SAP__core.Computed" />
+                <Annotation Term="SAP__core.Immutable" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/Depth">
+                <Annotation Term="SAP__common.Label" String="Depth" />
+                <Annotation Term="SAP__measures.Unit" Path="DimUnit" />
+                <Annotation Term="SAP__core.Computed" />
+                <Annotation Term="SAP__core.Immutable" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/Height">
+                <Annotation Term="SAP__common.Label" String="Height" />
+                <Annotation Term="SAP__measures.Unit" Path="DimUnit" />
+                <Annotation Term="SAP__core.Computed" />
+                <Annotation Term="SAP__core.Immutable" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/DimUnit">
+                <Annotation Term="SAP__common.Label" String="Dimension" />
+                <Annotation Term="SAP__core.Computed" />
+                <Annotation Term="SAP__core.Immutable" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/CreationDate">
+                <Annotation Term="SAP__common.Label" String="Creation Date" />
+                <Annotation Term="SAP__common.QuickInfo" String="Date when this entity was created" />
+                <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/LastChanged">
+                <Annotation Term="SAP__common.Label" String="Changed at" />
+                <Annotation Term="SAP__common.QuickInfo" String="The date and time when the entity was changed" />
+                <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/AvailableSince">
+                <Annotation Term="SAP__common.Label" String="Available since" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/DeliveryTransport">
+                <Annotation Term="SAP__common.Label" String="Transport Delivery" />
+                <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+            <Annotations Target="SAP__self.Product/DeliveryTransportName">
+                <Annotation Term="SAP__common.Label" String="Transport Delivery Name" />
+                <Annotation Term="SAP__core.Computed" />
+            </Annotations>
+
+            <Annotations Target="SAP__self.VL_SH_H_TRANSPORT_Type/KEY">
+                <Annotation Term="SAP__common.Label" String="Key" />
+                <Annotation Term="SAP__common.Text" Path="TXT" /> </Annotations>
+            <Annotations Target="SAP__self.VL_SH_H_TRANSPORT_Type/TXT">
+                <Annotation Term="SAP__common.Label" String="Delivery Transport" />
+            </Annotations>
+
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
