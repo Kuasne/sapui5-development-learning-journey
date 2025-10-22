@@ -56,15 +56,17 @@
                           placeholder="Selecione a data de entrada..."
                           displayFormat="long"/>
 
-            <m:Label text="Categoria" required="true"/>
-            <m:ComboBox id="selectCategory" width="100%"
-                       placeholder="Digite ou selecione a categoria..." showSecondaryValues="false" > <m:items>
+            <m:Label text="Material" required="true"/>
+            <m:ComboBox id="selectMaterial" width="100%"
+                       placeholder="Digite ou selecione o tipo de material..." showSecondaryValues="false" > <m:items>
                     <core:Item xmlns:core="sap.ui.core" key="" text="-- Selecione --"/>
                     <core:Item xmlns:core="sap.ui.core" key="BTQ" text="BTQ_LTQ"/>
                     <core:Item xmlns:core="sap.ui.core" key="BTQ_LTF" text="BTQ_LTF"/>
                     <core:Item xmlns:core="sap.ui.core" key="FTQ" text="FTQ"/>
                     <core:Item xmlns:core="sap.ui.core" key="LTQ" text="LTQ"/>
                     <core:Item xmlns:core="sap.ui.core" key="BQD" text="BQD_LTQ"/>
+                    <core:Item xmlns:core="sap.ui.core" key="BFH_2F" text="BFH_2F"/>
+                    <core:Item xmlns:core="sap.ui.core" key="GSPR" text="BFH_GSPRF"/>
                     </m:items>
             </m:ComboBox>
 
