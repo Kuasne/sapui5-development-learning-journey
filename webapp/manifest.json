@@ -45,6 +45,9 @@
     },
     "sap.ui5": {
         "flexEnabled": false,
+        "resourceRoots": {
+            "mockserver": "mockserver"
+        },
         "dependencies": {
             "minUI5Version": "1.96.36",
             "libs": {
@@ -56,7 +59,9 @@
                 "sap.ui.comp": {},
                 "sap.ui.generic.app": {},
                 "sap.ui.table": {},
-                "sap.ushell": {}
+                "sap.ushell": {},
+                "sap.ui.fl": {},
+                "sap.ui.mdc": {}
             }
         },
         "contentDensities": {
@@ -126,6 +131,23 @@
             "type": "XML",
             "async": true,
             "id": "app"
+        },
+        "config": {
+            "sample": {
+                "stretch": true,
+                "files": [
+                    "Main.view.xml",
+                    "Main.controller.js",
+                    "Component.js",
+                    "mockserver/metadata.xml",
+                    "mockserver/Products.json",
+                    "mockserver/VL_SH_H_TCURC.json",
+                    "mockserver/VL_SH_H_CATEGORY.json",
+                    "mockserver/VL_SH_H_TRANSPORT.json",
+                    "mockserver/VL_SH_H_TUNIT.json",
+                    "manifest.json"
+                ]
+            }
         }
     }
 }
