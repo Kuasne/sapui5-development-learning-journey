@@ -73,16 +73,16 @@ html, body, #app, #toolPage, .sapTntToolPage {
 
 /* Style for the Emphasized Button (Salvar) */
 .meuFormulario .sapMBtnEmphasized > .sapMBtnInner {
-    background-color: var(--sapButton_Emphasized_Background, #0a6ed1); /* SAP Blue background */
-    border-color: var(--sapButton_Emphasized_BorderColor, #0a6ed1); /* SAP Blue border */
+    background-color: var(--sapButton_Emphasized_Background, #0180ff); /* SAP Blue background */
+    border-color: var(--sapButton_Emphasized_BorderColor, #0180ff); /* SAP Blue border */
     color: var(--sapButton_Emphasized_TextColor, #ffffff); /* White text */
     text-shadow: none;
 }
 
 /* Style for the Emphasized Button when hovered */
 .meuFormulario .sapMBtnEmphasized:hover > .sapMBtnInner {
-    background-color: var(--sapButton_Emphasized_Hover_Background, #0854a0); /* Darker blue on hover */
-    border-color: var(--sapButton_Emphasized_Hover_BorderColor, #0854a0);
+    background-color: var(--sapButton_Emphasized_Hover_Background, #0180ff); /* Darker blue on hover */
+    border-color: var(--sapButton_Emphasized_Hover_BorderColor, #0180ff);
 }
 
 /* Style for the Emphasized Button when active (clicked) */

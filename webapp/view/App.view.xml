@@ -57,41 +57,39 @@
                           displayFormat="long"/>
 
             <m:Label text="Categoria" required="true"/>
-            <m:Input id="inputCategory"
-                     showValueHelp="true"
-                     valueHelpRequest=".onValueHelpCategory"
-                     placeholder="Selecione a categoria..."/>
+            <m:ComboBox id="selectCategory" width="100%"
+                       placeholder="Digite ou selecione a categoria..." showSecondaryValues="false" > <m:items>
+                    <core:Item xmlns:core="sap.ui.core" key="" text="-- Selecione --"/>
+                    <core:Item xmlns:core="sap.ui.core" key="BTQ" text="BTQ_LTQ"/>
+                    <core:Item xmlns:core="sap.ui.core" key="BTQ_LTF" text="BTQ_LTF"/>
+                    <core:Item xmlns:core="sap.ui.core" key="FTQ" text="FTQ"/>
+                    <core:Item xmlns:core="sap.ui.core" key="LTQ" text="LTQ"/>
+                    <core:Item xmlns:core="sap.ui.core" key="BQD" text="BQD_LTQ"/>
+                    </m:items>
+            </m:ComboBox>
 
             <m:Label text="Price"/>
-            <m:Input id="inputPrice" placeholder="0.00" width="60%">
-                <m:layoutData>
-                     <l:GridData span="XL7 L7 M7 S7" />
-                </m:layoutData>
-            </m:Input>
-            <m:Select id="selectCurrency" width="40%" class="sapUiLargeMarginEnd">
-                <m:items>
-                    <core:Item xmlns:core="sap.ui.core" key="BRL" text="BRL"/>
-                    <core:Item xmlns:core="sap.ui.core" key="EUR" text="EUR"/>
-                    <core:Item xmlns:core="sap.ui.core" key="USD" text="USD"/>
-                </m:items>
-                 <m:layoutData>
-                     <l:GridData span="XL5 L5 M5 S5" />
-                </m:layoutData>
-            </m:Select>
+            <m:HBox alignItems="Center">  <m:Input id="inputPrice" placeholder="0.00" width="auto"/>
+                <m:Select id="selectCurrency" width="10rem" class="sapUiTinyMarginBegin"> <m:items>
+                        <core:Item xmlns:core="sap.ui.core" key="BRL" text="BRL"/>
+                        <core:Item xmlns:core="sap.ui.core" key="EUR" text="EUR"/>
+                        <core:Item xmlns:core="sap.ui.core" key="USD" text="USD"/>
+                    </m:items>
+                </m:Select>
+            </m:HBox>
+
             <m:Label text="Quantity"/>
-             <m:Input id="inputQuantity" placeholder="0" width="60%">
-                <m:layoutData>
-                     <l:GridData span="XL7 L7 M7 S7" />
-                </m:layoutData>
-            </m:Input>
-            <m:Select id="selectUoM" width="40%">
-                <m:items>
-                    <core:Item xmlns:core="sap.ui.core" key="To" text="To"/>
-                    <core:Item xmlns:core="sap.ui.core" key="Peças" text="Peças"/>
-                    <core:Item xmlns:core="sap.ui.core" key="KG" text="KG"/>
-                    <core:Item xmlns:core="sap.ui.core" key="UN" text="UN"/>
-                </m:items>
-            </m:Select>
+            <m:HBox alignItems="Center"> <m:Input id="inputQuantity" placeholder="0" width="auto"/>
+                <m:Select id="selectUoM" width="10rem" class="sapUiTinyMarginBegin"> <m:items>
+                        <core:Item xmlns:core="sap.ui.core" key="To" text="To"/>
+                        <core:Item xmlns:core="sap.ui.core" key="Peças" text="Peças"/>
+                        <core:Item xmlns:core="sap.ui.core" key="KG" text="KG"/>
+                        <core:Item xmlns:core="sap.ui.core" key="UN" text="UN"/>
+                    </m:items>
+                </m:Select>
+             </m:HBox>
+
+            <core:Title xmlns:core="sap.ui.core" text=""/>
 
             <m:Label text="" /> <m:Button text="Salvar" type="Emphasized" press=".onSavePress"/>
 
