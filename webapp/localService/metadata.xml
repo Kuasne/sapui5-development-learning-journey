@@ -426,44 +426,6 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="SAP__self.Container">
-                <Annotation Term="SAP__CodeList.CurrencyCodes">
-                    <Record>
-                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                    </Record>
-                </Annotation>
-                <Annotation Term="SAP__aggregation.ApplySupported">
-                    <Record>
-                        <PropertyValue Property="Transformations">
-                            <Collection>
-                                <String>aggregate</String>
-                                <String>groupby</String>
-                                <String>filter</String>
-                            </Collection>
-                        </PropertyValue>
-                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None" />
-                    </Record>
-                </Annotation>
-                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true" />
-                <Annotation Term="SAP__capabilities.FilterFunctions">
-                    <Collection>
-                        <String>eq</String>
-                        <String>ne</String>
-                        <String>gt</String>
-                        <String>ge</String>
-                        <String>lt</String>
-                        <String>le</String>
-                        <String>and</String>
-                        <String>or</String>
-                        <String>contains</String>
-                        <String>startswith</String>
-                        <String>endswith</String>
-                        <String>any</String>
-                        <String>all</String>
-                    </Collection>
-                </Annotation>
-            </Annotations>
             <Annotations Target="SAP__self.UX_CustomerType/Email">
                 <Annotation Term="Communication.IsEmailAddress" />
                 <Annotation Term="SAP__common.Label" String="E-Mail Address" />
@@ -495,18 +457,18 @@
                 </Key>
                 <Property Name="ProductId" Type="Edm.String" Nullable="false" MaxLength="20" />
                 <Property Name="Category" Type="Edm.String" MaxLength="3" />
-                <Property Name="CategoryName" Type="Edm.String" Nullable="false" MaxLength="3" />
-                <Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="3" />
+                <Property Name="CategoryName" Type="Edm.String" Nullable="false" MaxLength="255" />
+                <Property Name="SupplierName" Type="Edm.String" Nullable="false" MaxLength="255" />
                 <Property Name="Description" Type="Edm.String" MaxLength="256" />
-                <Property Name="WeightMeasure" Type="Edm.String" Nullable="false" MaxLength="3" />
+                <Property Name="WeightMeasure" Type="Edm.String" Nullable="false" MaxLength="10" />
                 <Property Name="WeightUnit" Type="Edm.String" Nullable="false" MaxLength="3" />
                 <Property Name="Price" Type="Edm.Decimal" Nullable="true" Precision="13" Scale="2" />
                 <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="3" />
-                <Property Name="Quantity" Type="Edm.String" Nullable="true" MaxLength="3" />
+                <Property Name="Quantity" Type="Edm.String" Nullable="true" MaxLength="10" />
                 <Property Name="UoM" Type="Edm.String" Nullable="false" MaxLength="3" />
-                <Property Name="Width" Type="Edm.String" Nullable="false" MaxLength="3" />
-                <Property Name="Depth" Type="Edm.String" Nullable="false" MaxLength="3" />
-                <Property Name="Height" Type="Edm.String" Nullable="false" MaxLength="3" />
+                <Property Name="Width" Type="Edm.String" Nullable="false" MaxLength="10" />
+                <Property Name="Depth" Type="Edm.String" Nullable="false" MaxLength="10" />
+                <Property Name="Height" Type="Edm.String" Nullable="false" MaxLength="10" />
                 <Property Name="DimUnit" Type="Edm.String" Nullable="false" MaxLength="3" />
                 <Property Name="CreationDate" Type="Edm.DateTime" Nullable="false" />
                 <Property Name="LastChanged" Type="Edm.DateTime" Nullable="false" />

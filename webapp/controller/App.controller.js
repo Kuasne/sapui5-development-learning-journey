@@ -16,23 +16,29 @@ sap.ui.define([
 
             // Mostra uma mensagem com o texto do item
             MessageToast.show("Você clicou em: " + sItemText);
-
-            // Você pode adicionar lógica aqui para navegar para outras
-            // views ou carregar dados diferentes baseado no item clicado (sKey)
-        }
-
-        // Não precisamos mais das funções onInputChange e onButtonPress
-        // porque removemos o Input e o Button da view App.view.xml.
-        // Se você os adicionar novamente, descomente/adicione as funções.
-        /*
-        onInputChange: function(oEvent){
-             var sInputValue = oEvent.getParameter("value");
-             console.log("Input mudou para: ", sInputValue);
         },
 
-        onButtonPress: function(){
-             MessageToast.show("Botão clicado!");
+        // --- Novas Funções ---
+        onValueHelpTransport: function() {
+            MessageToast.show("Ajuda para Transporte clicada!");
+            // Aqui entraria a lógica para abrir um Dialog de seleção
+        },
+
+        onValueHelpCategory: function() {
+            MessageToast.show("Ajuda para Categoria clicada!");
+            // Aqui entraria a lógica para abrir um Dialog de seleção
+        },
+
+        onSavePress: function(){
+             MessageToast.show("Botão Salvar clicado!");
+             // Aqui você pode adicionar lógica para ler os valores dos inputs
+             // Exemplo:
+             // var sTransporte = this.byId("inputTransport").getValue();
+             // var sCategoria = this.byId("inputCategory").getValue();
+             // var oDataCriacao = this.byId("dateCreationSimple").getDateValue(); // Pega o objeto Date
+             // console.log("Transporte:", sTransporte);
+             // console.log("Categoria:", sCategoria);
+             // console.log("Data Criação:", oDataCriacao);
         }
-        */
     });
 });
